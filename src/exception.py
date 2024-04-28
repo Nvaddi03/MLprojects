@@ -1,4 +1,5 @@
 import sys # python runtime
+from src.logger import logging
 
 #custome exception handling
 def error_message_detail(error, error_detail:sys):
@@ -16,3 +17,14 @@ class CustomException(Exception):
 
     def __str__(self):
         return self.error_message
+
+
+# check if logging error is working
+'''
+if __name__ == "__main__":
+    try:
+        a=1/0
+    except Exception as e:
+        logging.info("divided by zero")
+        raise CustomException(e, sys)
+'''
