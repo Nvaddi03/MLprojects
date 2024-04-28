@@ -9,9 +9,9 @@ from dataclasses import dataclass # this will help you to create class variable
 
 @dataclass
 class DataIngestionConfig:
-    train_data_path: str = os.path.join('/Users/narasimharaovaddi/PycharmProjects/MLProject/logs/artifacts', "train.csv" )
-    test_data_path: str = os.path.join('/Users/narasimharaovaddi/PycharmProjects/MLProject/logs/artifacts', "test.csv")
-    raw_data_path: str = os.path.join('/Users/narasimharaovaddi/PycharmProjects/MLProject/logs/artifacts', "raw.csv")
+    train_data_path: str = os.path.join('/Users/narasimharaovaddi/PycharmProjects/MLProject/src/artifacts', "train.csv" )
+    test_data_path: str = os.path.join('/Users/narasimharaovaddi/PycharmProjects/MLProject/src/artifacts', "test.csv")
+    raw_data_path: str = os.path.join('/Users/narasimharaovaddi/PycharmProjects/MLProject/src/artifacts', "raw.csv")
 
 class DataIngestion:
     def __init__(self):
@@ -42,10 +42,10 @@ class DataIngestion:
         except Exception as e:
             raise CustomException(e,sys)
 
-'''
+
 if __name__ =="__main__":
     obj = DataIngestion()
     obj.initiate_data_ingestion()
     print("completed")
-'''
+
 
