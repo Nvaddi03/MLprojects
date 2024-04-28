@@ -7,6 +7,9 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass # this will help you to create class variable
 
+from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import DataTransformationConfig
+
 @dataclass
 class DataIngestionConfig:
     train_data_path: str = os.path.join('/Users/narasimharaovaddi/PycharmProjects/MLProject/src/artifacts', "train.csv" )
@@ -42,10 +45,14 @@ class DataIngestion:
         except Exception as e:
             raise CustomException(e,sys)
 
-'''
+
 if __name__ =="__main__":
     obj = DataIngestion()
-    obj.initiate_data_ingestion()
+    X_train,X_test = obj.initiate_data_ingestion()
+
+    data_transfrmation = DataTransformation()
+    data_transfrmation.initiate_data_transformation(X_train,X_test)
     print("completed")
-'''
+
+
 
